@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Ur Cleaner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ad0056;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h3 {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .card p {
+            padding: 0 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card button {
+            margin-top: 10px;
+            background-color: #cc0047;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #005fa3;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .section h3 {
+            color: #004aad;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            padding: 6px 0;
+        }
+
+        .btn {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #005fa3;
+        }
+
+        footer {
+            background-color: #e0e0e0;
+            color: #444;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Book Ur Cleaner</h1>
+        <p>One-stop solution for all your home cleaning needs</p>
+    </header>
+
+    <main>
+        <h2>Choose a Service</h2>
+        <div class="services">
+
+            <!-- Kitchen -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.Zkz7T1W06sOW9vsaLHO0fwHaE4?pid=Api&P=0&h=180" alt="Kitchen Cleaning">
+                <h3>Kitchen Cleaning</h3>
+                <p>We make your kitchen sparkle again!</p>
+                <button onclick="showSection('kitchen')">Book Now</button>
+            </div>
+
+            <!-- Washing -->
+            <div class="card">
+                <img src="https://www.anitashousekeeping.com/wp-content/uploads/2023/04/coffee-stain-on-clothes-before-after.png" alt="Washing Clothes">
+                <h3>Washing Clothes</h3>
+                <p>Fresh and clean laundry service at your door.</p>
+                <button onclick="showSection('washing')">Book Now</button>
+            </div>
+
+            <!-- Watering Plants -->
+            <div class="card">
+                <img src="https://geekspin.co/wp-content/uploads/2020/04/These-before-and-after-photos-of-rescued-plants-are-downright-inspiring-main-featured-1024x609.jpg" alt="Watering Plants">
+                <h3>Watering Plants</h3>
+                <p>Let your plants thrive with expert care.</p>
+                <button onclick="showSection('watering')">Book Now</button>
+            </div>
+
+            <!-- Bathroom -->
+            <div class="card">
+                <img src="https://inspireddesigntalk.com/wp-content/uploads/2021/02/bathroom-remodel-before-and-after-cost-1200x840-1.jpg" alt="Bathroom Cleaning">
+                <h3>Bathroom Cleaning</h3>
+                <p>Hygienic, fresh-smelling, germ-free bathrooms.</p>
+                <button onclick="showSection('bathroom')">Book Now</button>
+            </div>
+
+            <!-- Floor Sweeping -->
+            <div class="card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.dOvhKA0DKI678ASVFRk8JAHaEK?pid=Api&P=0&h=180" alt="Floor Sweeping">
+                <h3>Floor Sweeping</h3>
+                <p>Clean floors you’ll love to walk on.</p>
+                <button onclick="showSection('floor')">Book Now</button>
+            </div>
+
+            <!-- Windows -->
+            <div class="card">
+                <img src="https://nedstevensli.com/wp-content/uploads/2017/04/Before-and-After-Window-Cleaning-2.jpg" alt="Window Cleaning">
+                <h3>Window Cleaning</h3>
+                <p>Streak-free shine for your windows.</p>
+                <button onclick="showSection('window')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Booking Sections -->
+        <div id="kitchen" class="section">
+            <h3>Kitchen Cleaner Availability</h3>
+            <ul>
+                <li>Cleaner A - 10:00 AM</li>
+                <li>Cleaner B - 2:00 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="washing" class="section">
+            <h3>Laundry Helpers Available</h3>
+            <ul>
+                <li>Cleaner C - 9:30 AM</li>
+                <li>Cleaner D - 4:30 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="watering" class="section">
+            <h3>Plant Care Helpers</h3>
+            <ul>
+                <li>Cleaner E - 8:00 AM</li>
+                <li>Cleaner F - 5:00 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="bathroom" class="section">
+            <h3>Bathroom Cleaning Team</h3>
+            <ul>
+                <li>Cleaner G - 11:00 AM</li>
+                <li>Cleaner H - 3:00 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="floor" class="section">
+            <h3>Floor Sweepers</h3>
+            <ul>
+                <li>Cleaner I - 12:00 PM</li>
+                <li>Cleaner J - 6:00 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="window" class="section">
+            <h3>Window Cleaners</h3>
+            <ul>
+                <li>Cleaner K - 9:00 AM</li>
+                <li>Cleaner L - 1:00 PM</li>
+            </ul>
+            <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+
+        <div id="confirmation" class="section">
+            <h3>🎉 Booking Confirmed!</h3>
+            <p>Your cleaner will arrive on time and complete the task.</p>
+            <p>Payment will be collected after the work is done.</p>
+            <button class="btn" onclick="goHome()">Return to Home</button>
+            <br><br>
+            <a href="https://example.com/cleaning-tips" class="btn" target="_blank">Cleaning Tips</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Book Ur Cleaner | Designed by [Your Name]
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function confirmBooking() {
+            showSection('confirmation');
+        }
+
+        function goHome() {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
