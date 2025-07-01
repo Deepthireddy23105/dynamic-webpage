@@ -1,1 +1,1 @@
-# dynamic-webpage
+# static-webpage
